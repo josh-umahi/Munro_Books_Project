@@ -1,0 +1,187 @@
+[
+{
+    "bestOf": "Paperback Fiction",
+    "books": [
+        {
+            "id": "101",
+            "title": "The Testaments: A Novel",
+            "authors": [
+                "Margaret Atwood"
+            ],
+            "price": 30.41,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/a.jpg",
+            "inventory": 3,
+            "description": "The Testaments is a 2019 novel by Margaret Atwood. It is a sequel to The Handmaid's Tale. The novel is set 15 years after the events of The Handmaid's Tale. It is narrated by Aunt Lydia, a character from the previous novel; Agnes, a young woman living in Gilead; and Daisy, a young woman living in Canada."
+        },
+        {
+            "id": "102",
+            "title": "The Soulmate Equation",
+            "authors": [
+                "Christina Lauren"
+            ],
+            "price": 22.70,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/b.jpg",
+            "inventory": 0,
+            "description": "The New York Times bestselling author of The Unhoneymooners returns with a witty and effervescent novel about what happens when two people with everything on the line are thrown together by science—or is it fate?"
+        },
+        {
+            "id": "103",
+            "title": "The Thursday Murder Club: A Novel",
+            "authors": [
+                "Richard Osman"
+            ],
+            "price": 36.91,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/c.jpg",
+            "inventory": 5,
+            "description": "The Thursday Murder Club is the debut novel by Pointless and House of Games presenter Richard Osman. It was published on 3 September 2020 by Viking Press, a subsidiary of Penguin Random House."
+        },
+        {
+            "id": "104",
+            "title": "Girl Gone Mad: A Novel",
+            "authors": [
+                "Avery Bishop",
+                "Cassandra Campbell"
+            ],
+            "price": 28.96,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/d.jpg",
+            "inventory": 12,
+            "description": "They say everything is fun and games until someone gets hurt. Well, someone did--and now the game has changed... Emily Bennett works as a therapist in Pennsylvania, helping children overcome their troubled pasts--even as she struggles to forget her own"
+        },
+        {
+            "id": "105",
+            "title": "Satellite Love: A Novel",
+            "authors": [
+                "Genki Ferguson"
+            ],
+            "price": 29.99,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/e.jpg",
+            "inventory": 4,
+            "description": "Set in 1999 Japan, Satellite Love is a heartbreaking and beautifully unconventional debut novel about a girl, a boy, and a satellite--and a bittersweet meditation on loneliness, alienation, and what it means to be human."
+        }
+    ]
+},
+{
+    "bestOf": "Paperback Nonfiction",
+    "books": [
+        {
+            "id": "106",
+            "title": "Everything Is Figureoutable",
+            "authors": [
+                "Marie Forleo"
+            ],
+            "price": 27.1,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/f.jpg",
+            "inventory": 0,
+            "description": "A #1 New York Times Bestseller \"This book will change lives.\" --Elizabeth Gilbert, author of Eat, Pray, Love Now in paperback with a new prologue, the indispensable handbook for becoming the creative force of your own life by the host of the award-winning MarieTV and The Marie Forleo Podcast"
+        },
+        {
+            "id": "107",
+            "title": "The Subtle Art of Not Giving a F*ck",
+            "authors": [
+                "Mark Manson"
+            ],
+            "price": 31.8,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/g.jpg",
+            "inventory": 7,
+            "description": "The Subtle Art of Not Giving a Fuck: A Counterintuitive Approach to Living a Good Life is the second book by blogger and author Mark Manson. In it Manson argues that life's struggles give it meaning, and that the mindless positivity of typical self-help books is neither practical nor helpful."
+        },
+        {
+            "id": "108",
+            "title": "I Can't Make This Up: Life Lessons",
+            "authors": [
+                "Kevin Hart",
+                "Neil Strauss"
+            ],
+            "price": 26.77,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/h.jpg",
+            "inventory": 3,
+            "description": "Actor and comedian Kevin Hart grew up in North Philadelphia. His father was a drug addict who was in and out of jail. His brother was a crack dealer and petty thief. And his mother was overwhelmingly strict, beating him with belts, frying pans, and his own toys. "
+        },
+        {
+            "id": "109",
+            "title": "Facing the Mountain: A True Story of Japanese American Heroes in World War II",
+            "authors": [
+                "Daniel James Brown"
+            ],
+            "price": 22.98,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/i.jpg",
+            "inventory": 13,
+            "description": "From the #1 New York Times bestselling author of The Boys in the Boat, a gripping World War II saga of patriotism, highlighting the contributions and sacrifices that Japanese immigrants and their American-born children made for the sake of the nation: the courageous Japanese-American Army unit that overcame brutal odds in Europe; their families, incarcerated back home; and a young man who refused to surrender his constitutional rights, even if it meant imprisonment."
+        },
+        {
+            "id": "110",
+            "title": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+            "authors": [
+                "James Clear"
+            ],
+            "price": 27,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/j.jpg",
+            "inventory": 11,
+            "description": "No matter your goals, Atomic Habits offers a proven framework for improving--every day. James Clear, one of the world's leading experts on habit formation, reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results."
+        }
+    ]
+},
+{
+    "bestOf": "Hardcover Fiction",
+    "books": [
+        {
+            "id": "111",
+            "title": "The Midnight Library: A Novel",
+            "authors": [
+                "Matt Haig"
+            ],
+            "price": 21.42,
+            "isPaperback": false,
+            "localImageUrl": "assets/images/book_covers/k.jpg",
+            "inventory": 5,
+            "description": "Somewhere out beyond the edge of the universe there is a library that contains an infinite number of books, each one the story of another reality. One tells the story of your life as it is, along with another book for the other life you could have lived if you had made a different choice at any point in your life. While we all wonder how our lives might have been, what if you had the chance to go to the library and see for yourself? Would any of these other lives truly be better?"
+        },
+        {
+            "id": "112",
+            "title": "The Vanishing Half",
+            "authors": [
+                "Bennett Brit"
+            ],
+            "price": 35.20,
+            "isPaperback": false,
+            "localImageUrl": "assets/images/book_covers/l.jpg",
+            "inventory": 0,
+            "description": "The Vanishing Half is a historical fiction novel by American author Brit Bennett. It is her second novel and was published by Riverhead Books in 2020. It debuted at number one on The New York Times fiction best-seller list. HBO acquired the rights to develop a limited series with Bennett as executive producer."
+        },
+        {
+            "id": "113",
+            "title": "Malibu Rising: A Novel",
+            "authors": [
+                "Taylor Jenkins Reid"
+            ],
+            "price": 31.1,
+            "isPaperback": false,
+            "localImageUrl": "assets/images/book_covers/m.jpg",
+            "inventory": 0,
+            "description": "Malibu: August 1983. It’s the day of Nina Riva’s annual end-of-summer party, and anticipation is at a fever pitch. Everyone wants to be around the famous Rivas: Nina, the talented surfer and supermodel; brothers Jay and Hud, one a championship surfer, the other a renowned photographer; and their adored baby sister, Kit. Together the siblings are a source of fascination in Malibu and the world over—especially as the offspring of the legendary singer Mick Riva."
+        },
+        {
+            "id": "114",
+            "title": "The Last Thing He Told Me: A Novel",
+            "authors": [
+                "Laura Dave"
+            ],
+            "price": 26.91,
+            "isPaperback": false,
+            "localImageUrl": "assets/images/book_covers/n.jpg",
+            "inventory": 7,
+            "description": "A gripping mystery about a woman who thinks she’s found the love of her life—until he disappears."
+        }
+    ]
+}
+]

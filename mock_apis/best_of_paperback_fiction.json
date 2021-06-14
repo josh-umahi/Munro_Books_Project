@@ -1,0 +1,66 @@
+{
+    "bestOf": "Paperback Fiction",
+    "books": [
+        {
+            "id": "101",
+            "title": "The Testaments: A Novel",
+            "authors": [
+                "Margaret Atwood"
+            ],
+            "price": 30.41,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/a.jpg",
+            "inventory": 3,
+            "description": "The Testaments is a 2019 novel by Margaret Atwood. It is a sequel to The Handmaid's Tale. The novel is set 15 years after the events of The Handmaid's Tale. It is narrated by Aunt Lydia, a character from the previous novel; Agnes, a young woman living in Gilead; and Daisy, a young woman living in Canada."
+        },
+        {
+            "id": "102",
+            "title": "The Soulmate Equation",
+            "authors": [
+                "Christina Lauren"
+            ],
+            "price": 22.70,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/b.jpg",
+            "inventory": 0,
+            "description": "The New York Times bestselling author of The Unhoneymooners returns with a witty and effervescent novel about what happens when two people with everything on the line are thrown together by science—or is it fate?"
+        },
+        {
+            "id": "103",
+            "title": "The Thursday Murder Club: A Novel",
+            "authors": [
+                "Richard Osman"
+            ],
+            "price": 36.91,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/c.jpg",
+            "inventory": 5,
+            "description": "The Thursday Murder Club is the debut novel by Pointless and House of Games presenter Richard Osman. It was published on 3 September 2020 by Viking Press, a subsidiary of Penguin Random House."
+        },
+        {
+            "id": "104",
+            "title": "Girl Gone Mad: A Novel",
+            "authors": [
+                "Avery Bishop",
+                "Cassandra Campbell"
+            ],
+            "price": 28.96,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/d.jpg",
+            "inventory": 12,
+            "description": "They say everything is fun and games until someone gets hurt. Well, someone did--and now the game has changed... Emily Bennett works as a therapist in Pennsylvania, helping children overcome their troubled pasts--even as she struggles to forget her own"
+        },
+        {
+            "id": "105",
+            "title": "Satellite Love: A Novel",
+            "authors": [
+                "Genki Ferguson"
+            ],
+            "price": 29.99,
+            "isPaperback": true,
+            "localImageUrl": "assets/images/book_covers/e.jpg",
+            "inventory": 4,
+            "description": "Set in 1999 Japan, Satellite Love is a heartbreaking and beautifully unconventional debut novel about a girl, a boy, and a satellite--and a bittersweet meditation on loneliness, alienation, and what it means to be human."
+        }
+    ]
+}
