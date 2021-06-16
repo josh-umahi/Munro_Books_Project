@@ -1,9 +1,9 @@
 import "dart:convert";
 import "package:http/http.dart" as http;
 
-import '../models/best_books_cover_arts.dart';
-import '../models/best_books_thumbnails.dart';
-import '../models/book_details.dart';
+import '../../models/best_books_cover_arts.dart';
+import '../../models/best_books_thumbnails.dart';
+import '../../models/book_details.dart';
 
 class BookRepository {
   final uri = Uri.https(
@@ -12,7 +12,8 @@ class BookRepository {
   );
 
   Future<List<BestBooksCoverArts>> getBestBooksCoverArts() async {
-    final response = await http.get(uri);
+    final client = http.Client();
+    final response = await client.get(uri);
     final json = jsonDecode(response.body) as List;
 
     try {
@@ -23,12 +24,16 @@ class BookRepository {
       return bestBooksCoverArts;
     } catch (e) {
       throw (e);
+    } finally {
+      client.close();
     }
   }
 
   Future<BestBooksThumbnails> getBestBooksThumbnails(
-      String categoryTitle) async {
-    final response = await http.get(uri);
+    String categoryTitle,
+  ) async {
+    final client = http.Client();
+    final response = await client.get(uri);
     final json = jsonDecode(response.body) as List;
 
     try {
@@ -40,11 +45,14 @@ class BookRepository {
       throw ("No books match the category: $categoryTitle");
     } catch (e) {
       throw (e);
+    } finally {
+      client.close();
     }
   }
 
   Future<BookDetails> getBookDetails(String id) async {
-    final response = await http.get(uri);
+    final client = http.Client();
+    final response = await client.get(uri);
     final json = jsonDecode(response.body) as List;
 
     try {
@@ -58,6 +66,8 @@ class BookRepository {
       throw ("No book matches the id: $id");
     } catch (e) {
       throw (e);
+    } finally {
+      client.close();
     }
   }
 }

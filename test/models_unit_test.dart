@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import '../lib/repositories/book_repository.dart';
+import '../lib/data/repositories/book_repository.dart';
 
 void main() {
   group("class: BookRepository", () {
