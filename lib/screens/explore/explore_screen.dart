@@ -11,40 +11,36 @@ import '../../../constants.dart';
 class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light); // 1
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     return Scaffold(
       body: BlocProvider<CoverArtsCubit>(
         create: (_) => CoverArtsCubit()..getBestBooksCoverArts(),
         child: BlocBuilder<CoverArtsCubit, CoverArtsState>(
-          builder: (context, state) {
-            if (state is CoverArtsError) {
-              return ErrorDisplay();
-            } else {
-              return SingleChildScrollView(
-                child: Column(
-                  children: [
-                    HeaderWithSearchBar(),
-                    Container(
-                      child: (state is CoverArtsLoaded)
-                          ? Column(
-                              children: [
-                                BestOfCategory(),
-                                BestOfCategory(),
-                                BestOfCategory(),
-                                SizedBox(height: 20),
-                              ],
-                            )
-                          : Column(
-                              children: [
-                                BestOfCategory(isPlaceholder: true),
-                                BestOfCategory(isPlaceholder: true),
-                                BestOfCategory(isPlaceholder: true),
-                              ],
-                            ),
-                    ),
-                  ],
-                ),
+          builder: (_, state) {
+            if (state is CoverArtsLoading ||
+                state is CoverArtsLoaded ||
+                state is CoverArtsInitial) {
+              return ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                  HeaderWithSearchBar(),
+                  Column(
+                    children: (state is CoverArtsLoaded)
+                        ? [
+                            ...state.bestBooksCoverArts.map((bookCoverArt) {
+                              return BestOfCategory(category: bookCoverArt);
+                            }),
+                            SizedBox(height: 20),
+                          ]
+                        : List.filled(
+                            3,
+                            BestOfCategory(isPlaceholder: true),
+                          ),
+                  ),
+                ],
               );
+            } else {
+              return ErrorDisplay();
             }
           },
         ),
@@ -55,10 +51,6 @@ class ExploreScreen extends StatelessWidget {
 }
 
 class ErrorDisplay extends StatelessWidget {
-  const ErrorDisplay({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -77,7 +69,7 @@ class ErrorDisplay extends StatelessWidget {
                 size: 35,
               ),
               Text(
-                "There is a problem with your  internet connection",
+                "There is a problem with your internet connection",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: darkGreyColor,
@@ -92,3 +84,21 @@ class ErrorDisplay extends StatelessWidget {
     );
   }
 }
+//   ListView(
+//     padding: EdgeInsets.zero,
+//     children: [
+//       HeaderWithSearchBar(),
+//       Container(
+//         child: BlocBuilder<CoverArtsCubit, CoverArtsState>(
+//           builder: (context, state) {
+//             if (state is CoverArtsLoaded) {
+//               return Column(
+//                 children: [
+//                   ...state.bestBooksCoverArts.map((bookCoverArt) {
+//                     return BestOfCategory(category: bookCoverArt);
+//                   }),
+//                   SizedBox(height: 20),
+//                 ],
+//               );
+//             } else if (state is CoverArtsInitial ||
+//                 state is CoverArtsLoading) {

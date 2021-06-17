@@ -5,11 +5,11 @@ import '../../../constants.dart';
 class CoverArt extends StatelessWidget {
   const CoverArt({
     Key? key,
+    this.imageURL,
     this.isPlaceholder = false,
-    required this.imageURL,
   }) : super(key: key);
 
-  final String imageURL;
+  final String? imageURL;
   final bool isPlaceholder;
 
   @override
@@ -38,7 +38,7 @@ class CoverArt extends StatelessWidget {
                 color: placeholderColor,
               )
             : Image.asset(
-                imageURL,
+                imageURL!,
               ),
       ),
     );

@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:munro_books_app/models/best_books_cover_arts.dart';
 
 import '../../../constants.dart';
 import 'cover_art.dart';
 
 class BestOfCategory extends StatelessWidget {
   final bool isPlaceholder;
+  final BestBooksCoverArts? category;
 
-  const BestOfCategory({Key? key, this.isPlaceholder = false}) : super(key: key);
+  BestOfCategory({
+    Key? key,
+    this.isPlaceholder = false,
+    this.category,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +27,13 @@ class BestOfCategory extends StatelessWidget {
             children: [
               Container(
                 height: heightOfBestOfCategory - 20,
-                child: CategoryItems(isPlaceholder: isPlaceholder),
+                child: isPlaceholder
+                    ? CategoryItems(
+                        isPlaceholder: isPlaceholder,
+                      )
+                    : CategoryItems(
+                        items: category!.bookCoverArts,
+                      ),
               ),
             ],
           ),
@@ -33,7 +45,13 @@ class BestOfCategory extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                 horizontal: 12,
               ),
-              child: CategoryTitle(isPlaceholder: isPlaceholder),
+              child: isPlaceholder
+                  ? CategoryTitle(
+                      isPlaceholder: isPlaceholder,
+                    )
+                  : CategoryTitle(
+                      title: category!.categoryTitle,
+                    ),
             ),
           ),
           Positioned(
@@ -69,8 +87,13 @@ class BestOfCategory extends StatelessWidget {
 
 class CategoryTitle extends StatelessWidget {
   final bool isPlaceholder;
+  final String? title;
 
-  const CategoryTitle({Key? key, this.isPlaceholder = false}) : super(key: key);
+  const CategoryTitle({
+    Key? key,
+    this.isPlaceholder = false,
+    this.title,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +106,7 @@ class CategoryTitle extends StatelessWidget {
             ),
           )
         : Text(
-            "Best of Paperback Fiction",
+            "Best of $title",
             textAlign: TextAlign.center,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
@@ -97,8 +120,13 @@ class CategoryTitle extends StatelessWidget {
 
 class CategoryItems extends StatelessWidget {
   final bool isPlaceholder;
+  final List<BookCoverArt>? items;
 
-  const CategoryItems({Key? key, this.isPlaceholder = false}) : super(key: key);
+  const CategoryItems({
+    Key? key,
+    this.isPlaceholder = false,
+    this.items,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -110,28 +138,14 @@ class CategoryItems extends StatelessWidget {
             horizontal: 14,
           ),
           child: Row(
-            children: [
-              CoverArt(
-                isPlaceholder: isPlaceholder,
-                imageURL: "assets/images/book_covers/a.jpg",
-              ),
-              CoverArt(
-                isPlaceholder: isPlaceholder,
-                imageURL: "assets/images/book_covers/b.jpg",
-              ),
-              CoverArt(
-                isPlaceholder: isPlaceholder,
-                imageURL: "assets/images/book_covers/c.jpg",
-              ),
-              CoverArt(
-                isPlaceholder: isPlaceholder,
-                imageURL: "assets/images/book_covers/d.jpg",
-              ),
-              CoverArt(
-                isPlaceholder: isPlaceholder,
-                imageURL: "assets/images/book_covers/e.jpg",
-              ),
-            ],
+            children: isPlaceholder
+                ? List.filled(
+                    5,
+                    CoverArt(isPlaceholder: isPlaceholder),
+                  )
+                : items!.map((item) {
+                    return CoverArt(imageURL: item.imageUrl);
+                  }).toList(),
           ),
         ),
       ],
