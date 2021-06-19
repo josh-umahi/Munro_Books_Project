@@ -1,7 +1,7 @@
 part of '../book_thumbnails_screen.dart';
 
 class BookThumbnail extends StatelessWidget {
-  final BookThumbnail? bookThumbnail;
+  final modelA.BookThumbnail? bookThumbnail;
   BookThumbnail([this.bookThumbnail]);
 
   @override
@@ -21,7 +21,7 @@ class BookThumbnail extends StatelessWidget {
                   color: placeholderColor,
                 )
               : Image.asset(
-                  "assets/images/book_covers/a.jpg",
+                  bookThumbnail!.imageUrl,
                   height: 165,
                 ),
           SizedBox(width: 10),
@@ -34,7 +34,7 @@ class BookThumbnail extends StatelessWidget {
                   bottom: BorderSide(width: 0.5, color: darkGreyColor),
                 ),
               ),
-              child: BookThumbnailDetails(),
+              child: BookThumbnailDetails(bookThumbnail),
             ),
           ),
         ],
@@ -44,7 +44,7 @@ class BookThumbnail extends StatelessWidget {
 }
 
 class BookThumbnailDetails extends StatelessWidget {
-  final BookThumbnail? bookThumbnail;
+  final modelA.BookThumbnail? bookThumbnail;
   BookThumbnailDetails([this.bookThumbnail]);
 
   @override
@@ -74,7 +74,7 @@ class BookThumbnailDetails extends StatelessWidget {
             ]
           : [
               Text(
-                "The Testaments: A ",
+                bookThumbnail!.title,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
@@ -83,21 +83,26 @@ class BookThumbnailDetails extends StatelessWidget {
                 ),
               ),
               Text(
-                "by Margaret Atwood",
+                bookThumbnail!.authors,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(fontSize: 16, color: darkGreyColor),
               ),
               Spacer(),
               Text(
-                "\$35.00",
+                "\$${bookThumbnail!.price}",
                 style: TextStyle(fontSize: 20, color: Colors.green),
               ),
-              Text(
-                "3 in stock now",
-                maxLines: 1,
-                style: TextStyle(fontSize: 16, color: darkGreyColor),
-              ),
+              bookThumbnail!.stockTotal == 0
+                  ? Text(
+                      "Sold out",
+                      style: TextStyle(fontSize: 16, color: errorTextColor),
+                    )
+                  : Text(
+                      "${bookThumbnail!.stockTotal} in stock now",
+                      maxLines: 1,
+                      style: TextStyle(fontSize: 16, color: darkGreyColor),
+                    ),
             ],
     );
   }

@@ -73,7 +73,6 @@ class BookDetails extends Book {
       price: $price
       imageUrl: $imageUrl
       bookMaterial: $bookMaterial
-      stockDescription: $stockDescription
       description: $desc
     """;
   }

@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ourTheme,
         home: Scaffold(
-          // body: BookThumbnailsScreen(),
-          body: ExploreLandingScreen(),
+          body: BookThumbnailsScreen(),
+          // body: ExploreLandingScreen(),
           bottomNavigationBar: BottomNavBar(),
         ));
   }

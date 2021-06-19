@@ -14,8 +14,8 @@ class ThumbnailsCubit extends Cubit<ThumbnailsState> {
   Future<void> getCategoryThumbnails(String categoryTitle) async {
     try {
       emit(ThumbnailsLoading());
-      final bestBooksCoverArt = await _bookRepository.getBestBooksThumbnails(categoryTitle);
-      emit(ThumbnailsLoaded(bestBooksCoverArt));
+      final bestBooksThumbnails = await _bookRepository.getBestBooksThumbnails(categoryTitle);
+      emit(ThumbnailsLoaded(bestBooksThumbnails));
     } catch (e) {
       emit(ThumbnailsError(e));
     }

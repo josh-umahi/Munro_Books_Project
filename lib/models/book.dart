@@ -29,10 +29,6 @@ abstract class Book {
     return priceAsDouble.toStringAsFixed(2);
   }
 
-  String get stockDescription {
-    return stockTotal > 0 ? "$stockTotal in stock now" : "Sold out";
-  }
-
   @override
   String toString() {
     return """
@@ -42,7 +38,6 @@ abstract class Book {
       price: $price
       imageUrl: $imageUrl
       bookMaterial: $bookMaterial
-      stockDescription: $stockDescription
     """;
   }
 }

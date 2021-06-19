@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../components/internet_error_container.dart';
 import '../../data/cubit/cover_arts_cubit.dart';
 import '../../theme/constants.dart';
 import '../../models/best_books_cover_arts.dart';
@@ -15,69 +16,55 @@ class ExploreLandingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-    return BlocProvider<CoverArtsCubit>(
-      create: (_) => CoverArtsCubit()..getBestBooksCoverArts(),
-      child: BlocBuilder<CoverArtsCubit, CoverArtsState>(
-        builder: (_, state) {
-          if (state is CoverArtsLoading ||
-              state is CoverArtsLoaded ||
-              state is CoverArtsInitial) {
-            return ListView(
-              padding: EdgeInsets.zero,
-              children: [
-                HeaderWithSearchBar(),
-                Column(
-                  children: (state is CoverArtsLoaded)
-                      ? [
-                          ...state.bestBooksCoverArts.map((bookCoverArt) {
-                            return BestOfCategory(bookCoverArt);
-                          }),
-                          SizedBox(height: 20),
-                        ]
-                      : List.filled(3, BestOfCategory()),
-                ),
-              ],
-            );
-          } else {
-            return ErrorDisplay();
-          }
-        },
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
+        toolbarHeight: 2,
+        elevation: 0,
       ),
-    );
-  }
-}
+      body: BlocProvider<CoverArtsCubit>(
+        create: (_) => CoverArtsCubit()..getBestBooksCoverArts(),
+        child: BlocBuilder<CoverArtsCubit, CoverArtsState>(
+          builder: (_, state) {
+            if (state is CoverArtsLoading ||
+                state is CoverArtsLoaded ||
+                state is CoverArtsInitial) {
+              if (state is CoverArtsLoaded) {
+                final bestBooksCoverArts =
+                    state.bestBooksCoverArts.map((bookCoverArt) {
+                  return BestOfCategory(bookCoverArt);
+                }).toList();
 
-class ErrorDisplay extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        HeaderWithSearchBar(),
-        Spacer(),
-        FractionallySizedBox(
-          widthFactor: 0.8,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.error_outline,
-                color: darkGreyColor.withOpacity(0.7),
-                size: 35,
-              ),
-              Text(
-                "There is a problem with your internet connection",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: darkGreyColor,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
+                return ListView.builder(
+                  itemCount: 1 + bestBooksCoverArts.length,
+                  itemBuilder: (context, i) {
+                    if (i == 0) {
+                      return HeaderWithSearchBar();
+                    }
+                    return bestBooksCoverArts[i - 1];
+                  },
+                );
+              } else {
+                return ListView(
+                  children: [
+                    HeaderWithSearchBar(),
+                    ...List.filled(2, BestOfCategory()),
+                  ],
+                );
+              }
+            } else {
+              return Column(
+                children: [
+                  HeaderWithSearchBar(),
+                  Spacer(),
+                  InternetErrorContainer(),
+                  Spacer(flex: 2),
+                ],
+              );
+            }
+          },
         ),
-        Spacer(flex: 2),
-      ],
+      ),
     );
   }
 }
