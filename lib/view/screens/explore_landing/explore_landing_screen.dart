@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../components/internet_error_container.dart';
-import '../../data/cubit/cover_arts_cubit.dart';
+import '../../global_components/internet_error_container.dart';
+import '../../../BLoC/cubits/cover_arts_cubit.dart';
 import '../../theme/constants.dart';
-import '../../models/best_books_cover_arts.dart';
+import '../../../data/models/best_books_cover_arts.dart';
 
 part 'components/header_with_search_bar.dart';
 part 'components/best_of_category.dart';

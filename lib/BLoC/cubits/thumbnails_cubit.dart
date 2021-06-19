@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../repositories/book_repository.dart';
-import '../../models/best_books_thumbnails.dart';
+import '../../data/repositories/book_repository.dart';
+import '../../data/models/best_books_thumbnails.dart';
 
 part 'thumbnails_state.dart';
 

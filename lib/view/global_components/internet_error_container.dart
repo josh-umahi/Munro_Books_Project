@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/constants.dart';
+import '../theme/constants.dart';
 
 class InternetErrorContainer extends StatelessWidget {
   @override

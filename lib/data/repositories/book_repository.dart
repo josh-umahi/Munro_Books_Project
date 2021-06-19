@@ -1,9 +1,9 @@
 import "dart:convert";
 import "package:http/http.dart" as http;
 
-import '../../models/best_books_cover_arts.dart';
-import '../../models/best_books_thumbnails.dart';
-import '../../models/book_details.dart';
+import '../../data/models/best_books_cover_arts.dart';
+import '../../data/models/best_books_thumbnails.dart';
+import '../../data/models/book_details.dart';
 
 class BookRepository {
   final uri = Uri.https(

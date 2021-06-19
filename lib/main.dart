@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'theme/theme.dart';
-import 'screens/explore_landing/explore_landing_screen.dart';
-import '../components/bottom_nav_bar.dart';
-import '../screens/book_thumbnails/book_thumbnails_screen.dart';
+import 'view/theme/theme.dart';
+import 'view/screens/explore_landing/explore_landing_screen.dart';
+import 'view/global_components/bottom_nav_bar.dart';
+import 'view/screens/book_thumbnails/book_thumbnails_screen.dart';
 
 void main() {
   runApp(MyApp());

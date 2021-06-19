@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../components/internet_error_container.dart';
-import '../../data/cubit/thumbnails_cubit.dart';
-import '../../../theme/constants.dart';
-import '../../models/best_books_thumbnails.dart' as modelA;
+import '../../global_components/internet_error_container.dart';
+import '../../../BLoC/cubits/thumbnails_cubit.dart';
+import '../../theme/constants.dart';
+import '../../../data/models/best_books_thumbnails.dart' as modelA;
 
 part 'components/header.dart';
 part 'components/book_thumbnail.dart';
