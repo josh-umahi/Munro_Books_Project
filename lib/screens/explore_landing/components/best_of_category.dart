@@ -1,23 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:munro_books_app/models/best_books_cover_arts.dart';
-
-import '../../../constants.dart';
-import 'cover_art.dart';
+part of '../explore_landing_screen.dart';
 
 class BestOfCategory extends StatelessWidget {
-  final bool isPlaceholder;
   final BestBooksCoverArts? category;
-
-  BestOfCategory({
-    Key? key,
-    this.isPlaceholder = false,
-    this.category,
-  }) : super(key: key);
+  BestOfCategory([this.category]);
 
   @override
   Widget build(BuildContext context) {
+    final isPlaceholder;
+    (category == null) ? isPlaceholder = true : isPlaceholder = false;
+
     return Container(
-      margin: EdgeInsets.only(bottom: 17),
+      margin: const EdgeInsets.only(bottom: 17),
       height: heightOfBestOfCategory,
       width: double.infinity,
       child: Stack(
@@ -28,12 +21,8 @@ class BestOfCategory extends StatelessWidget {
               Container(
                 height: heightOfBestOfCategory - 20,
                 child: isPlaceholder
-                    ? CategoryItems(
-                        isPlaceholder: isPlaceholder,
-                      )
-                    : CategoryItems(
-                        items: category!.bookCoverArts,
-                      ),
+                    ? CategoryItems()
+                    : CategoryItems(category!.bookCoverArts),
               ),
             ],
           ),
@@ -42,16 +31,12 @@ class BestOfCategory extends StatelessWidget {
             left: 0,
             right: 0,
             child: Container(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 12,
               ),
               child: isPlaceholder
-                  ? CategoryTitle(
-                      isPlaceholder: isPlaceholder,
-                    )
-                  : CategoryTitle(
-                      title: category!.categoryTitle,
-                    ),
+                  ? CategoryTitle()
+                  : CategoryTitle(category!.categoryTitle),
             ),
           ),
           Positioned(
@@ -86,17 +71,14 @@ class BestOfCategory extends StatelessWidget {
 }
 
 class CategoryTitle extends StatelessWidget {
-  final bool isPlaceholder;
   final String? title;
-
-  const CategoryTitle({
-    Key? key,
-    this.isPlaceholder = false,
-    this.title,
-  }) : super(key: key);
+  CategoryTitle([this.title]);
 
   @override
   Widget build(BuildContext context) {
+    final isPlaceholder;
+    (title == null) ? isPlaceholder = true : isPlaceholder = false;
+
     return isPlaceholder
         ? FractionallySizedBox(
             widthFactor: 0.58,
@@ -119,32 +101,26 @@ class CategoryTitle extends StatelessWidget {
 }
 
 class CategoryItems extends StatelessWidget {
-  final bool isPlaceholder;
   final List<BookCoverArt>? items;
-
-  const CategoryItems({
-    Key? key,
-    this.isPlaceholder = false,
-    this.items,
-  }) : super(key: key);
+  CategoryItems([this.items]);
 
   @override
   Widget build(BuildContext context) {
+    final isPlaceholder;
+    (items == null) ? isPlaceholder = true : isPlaceholder = false;
+
     return ListView(
       scrollDirection: Axis.horizontal,
       children: [
         Container(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: 14,
           ),
           child: Row(
             children: isPlaceholder
-                ? List.filled(
-                    5,
-                    CoverArt(isPlaceholder: isPlaceholder),
-                  )
+                ? List.filled(5, CoverArt())
                 : items!.map((item) {
-                    return CoverArt(imageURL: item.imageUrl);
+                    return CoverArt(item.imageUrl);
                   }).toList(),
           ),
         ),

@@ -8,11 +8,6 @@ ThemeData ourTheme = ThemeData(
   primaryColor: primaryColor,
   splashColor: Colors.transparent,
   highlightColor: Colors.transparent,
-  textTheme: TextTheme(
-      // headline1: TextStyle(
-      //   color: Colors.black,
-      // ),
-      ),
   appBarTheme: AppBarTheme(
     backwardsCompatibility: false,
     systemOverlayStyle: SystemUiOverlayStyle(statusBarBrightness: Brightness.dark),
@@ -21,7 +16,7 @@ ThemeData ourTheme = ThemeData(
     selectedLabelStyle: bottomNavBarLabelStyle,
     unselectedLabelStyle: bottomNavBarLabelStyle,
     type: BottomNavigationBarType.fixed,
-    backgroundColor: Color(0xFFF6F6F6),
+    backgroundColor: lightGreyColor,
     selectedItemColor: primaryColor,
     unselectedItemColor: darkGreyColor,
     selectedIconTheme: IconThemeData(color: primaryColor),

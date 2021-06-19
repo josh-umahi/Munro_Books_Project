@@ -1,18 +1,15 @@
-import 'package:flutter/material.dart';
-
-import '../../../constants.dart';
-import '../../explore/components/search_bar.dart';
+part of '../explore_landing_screen.dart';
 
 class HeaderWithSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 25),
+      margin: const EdgeInsets.only(bottom: 25),
       height: heightOfHeader,
       child: Stack(
         children: [
           Container(
-            padding: EdgeInsets.fromLTRB(
+            padding: const EdgeInsets.fromLTRB(
               horizontalPadding,
               0,
               horizontalPadding,
@@ -52,8 +49,8 @@ class HeaderWithSearchBar extends StatelessWidget {
             bottom: 0,
             child: Container(
               alignment: Alignment.center,
-              margin: EdgeInsets.symmetric(horizontal: horizontalPadding),
-              padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+              margin: const EdgeInsets.symmetric(horizontal: horizontalPadding),
+              padding: const EdgeInsets.symmetric(horizontal: horizontalPadding),
               height: 55,
               decoration: BoxDecoration(
                 color: Colors.white,

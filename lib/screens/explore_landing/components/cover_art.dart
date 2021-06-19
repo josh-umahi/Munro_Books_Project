@@ -1,24 +1,19 @@
-import 'package:flutter/material.dart';
-
-import '../../../constants.dart';
+part of '../explore_landing_screen.dart';
 
 class CoverArt extends StatelessWidget {
-  const CoverArt({
-    Key? key,
-    this.imageURL,
-    this.isPlaceholder = false,
-  }) : super(key: key);
-
   final String? imageURL;
-  final bool isPlaceholder;
+  CoverArt([this.imageURL]);
 
   @override
   Widget build(BuildContext context) {
+    final isPlaceholder;
+    (imageURL == null) ? isPlaceholder = true : isPlaceholder = false;
+
     return GestureDetector(
       onTap: () {},
       child: Container(
         height: heightOfBestOfCategory * 0.57,
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           right: 10,
         ),
         decoration: isPlaceholder
