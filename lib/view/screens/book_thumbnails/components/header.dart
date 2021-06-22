@@ -24,6 +24,7 @@ class Header extends StatelessWidget {
         children: [
           GestureDetector(
             child: Icon(Icons.arrow_back),
+            onTap: () => Navigator.pop(context),
           ),
           isError
               ? SizedBox(height: 8)

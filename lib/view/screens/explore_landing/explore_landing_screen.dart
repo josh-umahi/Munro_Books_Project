@@ -22,48 +22,45 @@ class ExploreLandingScreen extends StatelessWidget {
         toolbarHeight: 2,
         elevation: 0,
       ),
-      body: BlocProvider<CoverArtsCubit>(
-        create: (_) => CoverArtsCubit()..getBestBooksCoverArts(),
-        child: BlocBuilder<CoverArtsCubit, CoverArtsState>(
-          builder: (_, state) {
-            if (state is CoverArtsLoading ||
-                state is CoverArtsLoaded ||
-                state is CoverArtsInitial) {
-              if (state is CoverArtsLoaded) {
-                final bestBooksCoverArts =
-                    state.bestBooksCoverArts.map((bookCoverArt) {
-                  return BestOfCategory(bookCoverArt);
-                }).toList();
+      body: BlocBuilder<CoverArtsCubit, CoverArtsState>(
+        builder: (_, state) {
+          if (state is CoverArtsLoading ||
+              state is CoverArtsLoaded ||
+              state is CoverArtsInitial) {
+            if (state is CoverArtsLoaded) {
+              final bestBooksCoverArts =
+                  state.bestBooksCoverArts.map((bookCoverArt) {
+                return BestOfCategory(bookCoverArt);
+              }).toList();
 
-                return ListView.builder(
-                  itemCount: 1 + bestBooksCoverArts.length,
-                  itemBuilder: (context, i) {
-                    if (i == 0) {
-                      return HeaderWithSearchBar();
-                    }
-                    return bestBooksCoverArts[i - 1];
-                  },
-                );
-              } else {
-                return ListView(
-                  children: [
-                    HeaderWithSearchBar(),
-                    ...List.filled(2, BestOfCategory()),
-                  ],
-                );
-              }
+              return ListView.builder(
+                itemCount: 1 + bestBooksCoverArts.length,
+                itemBuilder: (context, i) {
+                  if (i == 0) {
+                    return HeaderWithSearchBar();
+                  }
+                  return bestBooksCoverArts[i - 1];
+                },
+              );
             } else {
-              return Column(
+              return ListView(
                 children: [
                   HeaderWithSearchBar(),
-                  Spacer(),
-                  InternetErrorContainer(),
-                  Spacer(flex: 2),
+                  ...List.filled(3, BestOfCategory()),
                 ],
               );
             }
-          },
-        ),
+          } else {
+            return Column(
+              children: [
+                HeaderWithSearchBar(),
+                Spacer(),
+                InternetErrorContainer(),
+                Spacer(flex: 2),
+              ],
+            );
+          }
+        },
       ),
     );
   }

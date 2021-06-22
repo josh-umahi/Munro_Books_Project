@@ -1,25 +1,33 @@
 import 'package:flutter/material.dart';
 
 import 'view/theme/theme.dart';
-import 'view/screens/explore_landing/explore_landing_screen.dart';
-import 'view/global_components/bottom_nav_bar.dart';
-import 'view/screens/book_thumbnails/book_thumbnails_screen.dart';
+import 'view/screens/router/app_router.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final _appRouter = AppRouter();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Munro Books',
-        debugShowCheckedModeBanner: false,
-        theme: ourTheme,
-        home: Scaffold(
-          body: BookThumbnailsScreen(),
-          // body: ExploreLandingScreen(),
-          bottomNavigationBar: BottomNavBar(),
-        ));
+      title: 'Munro Books',
+      debugShowCheckedModeBanner: false,
+      theme: ourTheme,
+      onGenerateRoute: _appRouter.generateRoute,
+    );
+  }
+
+  @override
+  void dispose() {
+    _appRouter.dispose();
+    super.dispose();
   }
 }

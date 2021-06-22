@@ -20,6 +20,4 @@ class ThumbnailsCubit extends Cubit<ThumbnailsState> {
       emit(ThumbnailsError(e));
     }
   }
-
-  void clearCategoryThumbnails() => emit(ThumbnailsInitial());
 }

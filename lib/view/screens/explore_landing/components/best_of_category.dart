@@ -42,7 +42,12 @@ class BestOfCategory extends StatelessWidget {
           Positioned(
             bottom: 0,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: isPlaceholder
+                  ? () {}
+                  : () => Navigator.of(context).pushNamed(
+                        "/thumbnails",
+                        arguments: category!.categoryTitle,
+                      ),
               style: ElevatedButton.styleFrom(
                 elevation: 0,
                 primary: isPlaceholder
