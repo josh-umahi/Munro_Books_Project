@@ -6,6 +6,7 @@ import '../../global_components/internet_error_container.dart';
 import '../../../BLoC/cubits/thumbnails_cubit.dart';
 import '../../theme/constants.dart';
 import '../../../data/models/best_books_thumbnails.dart' as modelA;
+import '../../global_components/more_widgets.dart';
 
 part 'components/header.dart';
 part 'components/book_thumbnail.dart';

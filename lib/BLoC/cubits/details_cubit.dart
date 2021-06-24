@@ -11,7 +11,7 @@ class DetailsCubit extends Cubit<DetailsState> {
 
   DetailsCubit() : super(DetailsInitial());
 
-  Future<void> getCategoryDetails(String id) async {
+  Future<void> getDetails(String id) async {
     try {
       emit(DetailsLoading());
       final bookDetails = await _bookRepository.getBookDetails(id);

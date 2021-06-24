@@ -18,7 +18,7 @@ abstract class Book {
   });
 
   String get authors {
-    String authors = listOfAuthors[0];
+    String authors = "by ${listOfAuthors[0]}";
     for (var i = 1; i < listOfAuthors.length; i++) {
       authors += ", ${listOfAuthors[i]}";
     }
@@ -45,4 +45,15 @@ abstract class Book {
 enum BookMaterial {
   PAPERBACK,
   HARDCOVER,
+}
+
+extension BookMaterialAsString on BookMaterial {
+  String get asString {
+    switch (this) {
+      case BookMaterial.PAPERBACK:
+        return "PAPERBACK";
+      default:
+        return "HARDCOVER";
+    }
+  }
 }

@@ -22,6 +22,7 @@ class InternetErrorContainer extends StatelessWidget {
             style: TextStyle(
               color: darkGreyColor,
               fontSize: 14,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ],

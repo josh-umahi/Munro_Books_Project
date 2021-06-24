@@ -38,6 +38,7 @@ class HeaderWithSearchBar extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 13,
                     color: Colors.white,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ],
@@ -50,7 +51,8 @@ class HeaderWithSearchBar extends StatelessWidget {
             child: Container(
               alignment: Alignment.center,
               margin: const EdgeInsets.symmetric(horizontal: horizontalPadding),
-              padding: const EdgeInsets.symmetric(horizontal: horizontalPadding),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: horizontalPadding),
               height: 55,
               decoration: BoxDecoration(
                 color: Colors.white,

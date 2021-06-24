@@ -80,29 +80,29 @@ class BookThumbnailDetails extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.black,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               Text(
-                bookThumbnail!.authors,
+                "${bookThumbnail!.authors}",
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 16, color: darkGreyColor),
+                style: TextStyle(
+                  fontSize: 16,
+                  color: darkGreyColor,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
               Spacer(),
               Text(
                 "\$${bookThumbnail!.price}",
-                style: TextStyle(fontSize: 20, color: Colors.green),
+                style: TextStyle(
+                  fontSize: 20,
+                  color: priceColor,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
-              bookThumbnail!.stockTotal == 0
-                  ? Text(
-                      "Sold out",
-                      style: TextStyle(fontSize: 16, color: errorTextColor),
-                    )
-                  : Text(
-                      "${bookThumbnail!.stockTotal} in stock now",
-                      maxLines: 1,
-                      style: TextStyle(fontSize: 16, color: darkGreyColor),
-                    ),
+              StockTotalText(bookThumbnail!.stockTotal),
             ],
     );
   }
