@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../global_components/internet_error_container.dart';
@@ -14,7 +13,6 @@ part 'components/book_thumbnail.dart';
 class BookThumbnailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     return Scaffold(
       body: BlocBuilder<ThumbnailsCubit, ThumbnailsState>(
         builder: (_, state) {

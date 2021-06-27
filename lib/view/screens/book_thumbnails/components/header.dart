@@ -23,8 +23,11 @@ class Header extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           GestureDetector(
-            child: Icon(Icons.arrow_back),
             onTap: () => Navigator.pop(context),
+            child: Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ),
           ),
           isError
               ? SizedBox(height: 8)

@@ -7,7 +7,7 @@ import '../../data/models/book_details.dart';
 
 class BookRepository {
   final uri = Uri.https(
-    // "ca4d91cf-36bd-4783-886b-josh.mock.pstmn.io",
+    // "error-test-bla-bla.mock.pstmn.io",
     "ca4d91cf-36bd-4783-886b-ce52a182dc17.mock.pstmn.io",
     "//v1/bestbooks",
   );

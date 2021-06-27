@@ -1,8 +1,9 @@
 part of '../explore_landing_screen.dart';
 
 class CoverArt extends StatelessWidget {
+  final String? productID;
   final String? imageURL;
-  CoverArt([this.imageURL]);
+  CoverArt({this.productID, this.imageURL});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +11,13 @@ class CoverArt extends StatelessWidget {
     (imageURL == null) ? isPlaceholder = true : isPlaceholder = false;
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        if (!isPlaceholder)
+          Navigator.of(context).pushNamed(
+            "/details",
+            arguments: productID!,
+          );
+      },
       child: Container(
         height: heightOfBestOfCategory * 0.57,
         padding: const EdgeInsets.only(

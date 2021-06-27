@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../screens/splash_screen.dart';
@@ -14,59 +15,41 @@ class AppRouter {
   final _coverArtsCubit = CoverArtsCubit()..getBestBooksCoverArts();
   final _thumbnailsCubit = ThumbnailsCubit();
   final _detailsCubit = DetailsCubit();
-  
+
   final _bottomNavBar = BottomNavBar();
-
-  // Route generateRoute(RouteSettings settings) {
-  //   final args = settings.arguments;
-
-  //   switch (settings.name) {
-  //     // case '/':
-  //     //   return MaterialPageRoute(builder: (_) => SplashScreen());
-  //     // case '/landing':
-  //     case '/':
-  //       return MaterialPageRoute(
-  //         builder: (_) => BlocProvider.value(
-  //           value: _coverArtsCubit,
-  //           child: Scaffold(
-  //             body: ExploreLandingScreen(),
-  //             bottomNavigationBar: _bottomNavBar,
-  //           ),
-  //         ),
-  //       );
-  //     case '/thumbnails':
-  //       _thumbnailsCubit.getCategoryThumbnails(args as String);
-  //       return MaterialPageRoute(
-  //         builder: (_) => BlocProvider.value(
-  //           value: _thumbnailsCubit,
-  //           child: Scaffold(
-  //             body: BookThumbnailsScreen(),
-  //             bottomNavigationBar: _bottomNavBar,
-  //           ),
-  //         ),
-  //       );
-  //     default:
-  //       return _errorRoute();
-  //   }
-  // }
 
   Route generateRoute(RouteSettings settings) {
     final args = settings.arguments;
 
     switch (settings.name) {
-      // case '/':
-      //   _thumbnailsCubit.getCategoryThumbnails("Paperback Fiction");
-      //   return MaterialPageRoute(
-      //     builder: (_) => BlocProvider.value(
-      //       value: _thumbnailsCubit,
-      //       child: Scaffold(
-      //         body: BookThumbnailsScreen(),
-      //         bottomNavigationBar: _bottomNavBar,
-      //       ),
-      //     ),
-      //   );
       case '/':
-        _detailsCubit.getDetails("102");
+        return MaterialPageRoute(builder: (_) => SplashScreen());
+      case '/landing':
+        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: _coverArtsCubit,
+            child: Scaffold(
+              body: ExploreLandingScreen(),
+              bottomNavigationBar: _bottomNavBar,
+            ),
+          ),
+        );
+      case '/thumbnails':
+        _thumbnailsCubit.getCategoryThumbnails(args as String);
+        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: _thumbnailsCubit,
+            child: Scaffold(
+              body: BookThumbnailsScreen(),
+              bottomNavigationBar: _bottomNavBar,
+            ),
+          ),
+        );
+      case '/details':
+        _detailsCubit.getDetails(args as String);
+        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
             value: _detailsCubit,

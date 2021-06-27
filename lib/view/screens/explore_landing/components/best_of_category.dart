@@ -40,25 +40,25 @@ class BestOfCategory extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 0,
-            child: ElevatedButton(
-              onPressed: isPlaceholder
-                  ? () {}
-                  : () => Navigator.of(context).pushNamed(
-                        "/thumbnails",
-                        arguments: category!.categoryTitle,
-                      ),
-              style: ElevatedButton.styleFrom(
-                elevation: 0,
-                primary: isPlaceholder
-                    ? placeholderColor
-                    : Theme.of(context).primaryColor,
-                shape: RoundedRectangleBorder(
+            bottom: 5,
+            child: GestureDetector(
+              onTap: () {
+                if (!isPlaceholder)
+                  Navigator.of(context).pushNamed(
+                    "/thumbnails",
+                    arguments: category!.categoryTitle,
+                  );
+              },
+              child: Container(
+                width: 170,
+                height: 37,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: isPlaceholder
+                      ? placeholderColor
+                      : Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
-              ),
-              child: Container(
-                width: 140,
                 child: isPlaceholder
                     ? null
                     : Text(
@@ -128,7 +128,8 @@ class CategoryItems extends StatelessWidget {
             children: isPlaceholder
                 ? List.filled(5, CoverArt())
                 : items!.map((item) {
-                    return CoverArt(item.imageUrl);
+                    return CoverArt(
+                        productID: item.id, imageURL: item.imageUrl);
                   }).toList(),
           ),
         ),

@@ -9,35 +9,44 @@ class BookThumbnail extends StatelessWidget {
     final isPlaceholder;
     (bookThumbnail == null) ? isPlaceholder = true : isPlaceholder = false;
 
-    return Container(
-      margin: const EdgeInsets.only(bottom: 20),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          isPlaceholder
-              ? Container(
-                  width: 105,
-                  height: 165,
-                  color: placeholderColor,
-                )
-              : Image.asset(
-                  bookThumbnail!.imageUrl,
-                  height: 165,
+    return GestureDetector(
+      onTap: () {
+        if (!isPlaceholder)
+          Navigator.of(context).pushNamed(
+            "/details",
+            arguments: bookThumbnail!.id,
+          );
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 20),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            isPlaceholder
+                ? Container(
+                    width: 105,
+                    height: 165,
+                    color: placeholderColor,
+                  )
+                : Image.asset(
+                    bookThumbnail!.imageUrl,
+                    height: 165,
+                  ),
+            SizedBox(width: 10),
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.only(bottom: 12),
+                height: 175,
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(width: 0.5, color: darkGreyColor),
+                  ),
                 ),
-          SizedBox(width: 10),
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.only(bottom: 12),
-              height: 175,
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(width: 0.5, color: darkGreyColor),
-                ),
+                child: BookThumbnailDetails(bookThumbnail),
               ),
-              child: BookThumbnailDetails(bookThumbnail),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

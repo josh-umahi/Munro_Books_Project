@@ -20,4 +20,6 @@ const borderSides = BorderSide(
   width: 0.75,
   color: Color(0xFF91959B),
 );
-const secondaryBlue = Color(0xFF6079C4);
+const secondaryBlue = Color(0xFF2355F5);
+const heightOfImageStack = 350.0;
+const heightOfButtonPlusBottomMargin = 80.0; // "button" refers to "add to cart" button

@@ -1,8 +1,8 @@
 part of '../book_details_screen.dart';
 
-class BookDetails extends StatelessWidget {
-  final modelA.BookDetails bookDetails;
-  BookDetails(this.bookDetails);
+class TextDetails extends StatelessWidget {
+  final BookDetails textDetails;
+  TextDetails(this.textDetails);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class BookDetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  bookDetails.title,
+                  textDetails.title,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 18,
@@ -25,7 +25,7 @@ class BookDetails extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "${bookDetails.authors}",
+                  "${textDetails.authors}",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
@@ -53,7 +53,7 @@ class BookDetails extends StatelessWidget {
                   TextSpan(
                     children: [
                       TextSpan(
-                        text: "\$${bookDetails.price}",
+                        text: "\$${textDetails.price}",
                         style: TextStyle(
                           fontSize: 20,
                           color: priceColor,
@@ -61,7 +61,7 @@ class BookDetails extends StatelessWidget {
                         ),
                       ),
                       TextSpan(
-                        text: "  ${bookDetails.bookMaterial.asString}",
+                        text: "  ${textDetails.bookMaterial.asString}",
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.black,
@@ -72,7 +72,7 @@ class BookDetails extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                StockTotalText(bookDetails.stockTotal),
+                StockTotalText(textDetails.stockTotal),
               ],
             ),
           ),
@@ -94,9 +94,13 @@ class BookDetails extends StatelessWidget {
                 ),
               ),
               Text(
-                "${bookDetails.description}",
+                "${textDetails.description}",
                 textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 16,
+                ),
               ),
+              SizedBox(height: heightOfButtonPlusBottomMargin + 40),
             ],
           ),
         ],
