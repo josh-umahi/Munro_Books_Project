@@ -1,15 +1,15 @@
 import "dart:convert";
 import "package:http/http.dart" as http;
 
-import '../../data/models/best_books_cover_arts.dart';
-import '../../data/models/best_books_thumbnails.dart';
-import '../../data/models/book_details.dart';
+import '../models/best_books_cover_arts.dart';
+import '../models/best_books_thumbnails.dart';
+import '../models/book_details.dart';
 
 class BookRepository {
   final uri = Uri.https(
     // "error-test-bla-bla.mock.pstmn.io",
-    "ca4d91cf-36bd-4783-886b-ce52a182dc17.mock.pstmn.io",
-    "//v1/bestbooks",
+    "localhost:3000",
+    "/bestsellers",
   );
 
   Future<List<BestBooksCoverArts>> getBestBooksCoverArts() async {
