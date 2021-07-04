@@ -7,8 +7,8 @@ import '../models/book_details.dart';
 
 class BookRepository {
   final uri = Uri.https(
-    // "error-test-bla-bla.mock.pstmn.io",
-    "localhost:3000",
+    // "error-test-bla-bla.herokuapp.com",
+    "munro-books-api.herokuapp.com",
     "/bestsellers",
   );
 
