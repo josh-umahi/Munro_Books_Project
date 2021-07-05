@@ -1,4 +1,4 @@
-# Munro Books
+# Munro Books App
 
 A new Flutter project.
 

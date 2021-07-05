@@ -53,7 +53,7 @@ class TextDetails extends StatelessWidget {
                   TextSpan(
                     children: [
                       TextSpan(
-                        text: "\$${textDetails.price}",
+                        text: textDetails.price,
                         style: TextStyle(
                           fontSize: 20,
                           color: priceColor,

@@ -26,7 +26,7 @@ abstract class Book {
   }
 
   String get price {
-    return priceAsDouble.toStringAsFixed(2);
+    return "\$${priceAsDouble.toStringAsFixed(2)}";
   }
 
   @override

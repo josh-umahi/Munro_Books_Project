@@ -104,7 +104,7 @@ class BookThumbnailDetails extends StatelessWidget {
               ),
               Spacer(),
               Text(
-                "\$${bookThumbnail!.price}",
+                bookThumbnail!.price,
                 style: TextStyle(
                   fontSize: 20,
                   color: priceColor,
