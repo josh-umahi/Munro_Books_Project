@@ -4,6 +4,12 @@ My custom app design for local bookstore, [Munro Books](https://www.munrobooks.c
 
 Disclaimer: This was done as a personal project and is no way affiliated with the original brand!! If you woud like to get some nice books for the summer you can head over to their website at [munrobooks.com](https://www.munrobooks.com).
 
+<p float="left">
+    <img src="screenshots/figma_prototype.png" alt="Screenshot of Figma prototype">
+</p>
+
+Above is the Figma prototype
+
 ## How this app was made
 
 This app was built using the [flutter framework](https://flutter.dev/docs) and some additional external libraries from [pub.dev](https://pub.dev).
