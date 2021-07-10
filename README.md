@@ -1,16 +1,14 @@
 # Munro Books App
 
-A new Flutter project.
+My custom app design for local bookstore, [Munro Books](https://www.munrobooks.com). 
 
-## Getting Started
+Disclaimer: This was done as a personal project and is no way affiliated with the original brand!! If you woud like to get some nice books for the summer you can head over to their website at [munrobooks.com](https://www.munrobooks.com).
 
-This project is a starting point for a Flutter application.
+## How this app was made
 
-A few resources to get you started if this is your first Flutter project:
+This app was built using the [flutter framework](https://flutter.dev/docs) and some additional external libraries from [pub.dev](https://pub.dev).
+These include:
+- flutter_bloc: for state management
+- http: for making HTTP requests
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+My code for the backend is also on my github: click [here](https://github.com/josh-umahi/munro-books-API). It consists of a JSON API created with [json-server](https://github.com/typicode/json-server) and hosted on [Heroku](https://www.heroku.com/), a great platform for quickly deploying servers and much more.
