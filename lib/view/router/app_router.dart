@@ -25,36 +25,42 @@ class AppRouter {
       case '/':
         return MaterialPageRoute(builder: (_) => SplashScreen());
       case '/landing':
-        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
             value: _coverArtsCubit,
             child: Scaffold(
-              body: ExploreLandingScreen(),
+              body: AnnotatedRegion<SystemUiOverlayStyle>(
+                value: SystemUiOverlayStyle.light,
+                child: ExploreLandingScreen(),
+              ),
               bottomNavigationBar: _bottomNavBar,
             ),
           ),
         );
       case '/thumbnails':
         _thumbnailsCubit.getCategoryThumbnails(args as String);
-        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
             value: _thumbnailsCubit,
             child: Scaffold(
-              body: BookThumbnailsScreen(),
+              body: AnnotatedRegion<SystemUiOverlayStyle>(
+                value: SystemUiOverlayStyle.dark,
+                child: BookThumbnailsScreen(),
+              ),
               bottomNavigationBar: _bottomNavBar,
             ),
           ),
         );
       case '/details':
         _detailsCubit.getDetails(args as String);
-        SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
             value: _detailsCubit,
             child: Scaffold(
-              body: BookDetailsScreen(),
+              body: AnnotatedRegion<SystemUiOverlayStyle>(
+                value: SystemUiOverlayStyle.light,
+                child: BookDetailsScreen(),
+              ),
             ),
           ),
         );

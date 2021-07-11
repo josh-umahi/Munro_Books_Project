@@ -1,6 +1,6 @@
 # Munro Books App
 
-My custom app design for local bookstore, [Munro Books](https://www.munrobooks.com). 
+An iOS/android app I built for local bookstore, [Munro Books](https://www.munrobooks.com).
 
 Disclaimer: This was done as a personal project and is no way affiliated with the original brand!! If you woud like to get some nice books for the summer you can head over to their website at [munrobooks.com](https://www.munrobooks.com).
 
@@ -8,7 +8,8 @@ Disclaimer: This was done as a personal project and is no way affiliated with th
     <img src="screenshots/figma_prototype.png" alt="Screenshot of Figma prototype">
 </p>
 
-Above is the Figma prototype
+### Above is the Figma prototype. The screenshots closely reesemble the finished app
+<br/>
 
 ## How this app was made
 
