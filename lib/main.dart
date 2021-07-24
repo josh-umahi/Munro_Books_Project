@@ -13,7 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _appRouter = AppRouter();
+  final _appRouter = AppRouter(); // Next time put this is in your initState
 
   @override
   Widget build(BuildContext context) {
